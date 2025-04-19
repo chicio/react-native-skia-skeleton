@@ -30,7 +30,7 @@ export default defineConfig([
           useTabs: false,
         },
       ],
-      'max-len': 120,
+      'max-len': ['error', { code: 120}],
     },
   },
   {
