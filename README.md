@@ -1,6 +1,6 @@
 # react-native-skia-skeleton
 
-A skia skeletong for react native apps.
+A skia skeleton for react native apps.
 
 ## Installation
 
@@ -10,15 +10,7 @@ npm install react-native-skia-skeleton
 
 ## Usage
 
-
-```js
-import { multiply } from 'react-native-skia-skeleton';
-
-// ...
-
-const result = await multiply(3, 7);
-```
-
+See the [example](https://github.com/chicio/react-native-skia-skeleton/tree/main/example) folder to check how the library works.
 
 ## Contributing
 
@@ -28,6 +20,3 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 MIT
 
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
