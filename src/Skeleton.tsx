@@ -27,8 +27,8 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 }) =>
   loading ? (
     <View style={[styles.bones, containerStyle]}>
-      {bones.map((bone) => (
-        <Bone layout={bone} colors={colors} animation={animation} />
+      {bones.map((bone, index) => (
+        <Bone layout={bone} colors={colors} animation={animation} key={index} />
       ))}
     </View>
   ) : (
