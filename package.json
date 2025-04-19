@@ -1,7 +1,7 @@
 {
   "name": "react-native-skia-skeleton",
   "version": "0.1.0",
-  "description": "A skia skeletong for react native apps.",
+  "description": "A skia skeleton for react native apps.",
   "source": "./src/index.tsx",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -66,6 +66,7 @@
     "@evilmartians/lefthook": "^1.5.0",
     "@react-native/eslint-config": "^0.78.0",
     "@release-it/conventional-changelog": "^9.0.2",
+    "@shopify/react-native-skia": "^1.12.4",
     "@types/jest": "^29.5.5",
     "@types/react": "^19.0.12",
     "commitlint": "^19.6.1",
@@ -78,12 +79,15 @@
     "react": "18.3.1",
     "react-native": "0.76.9",
     "react-native-builder-bob": "^0.40.5",
+    "react-native-reanimated": "^3.17.4",
     "release-it": "^17.10.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
+    "@shopify/react-native-skia": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-reanimated": "*"
   },
   "workspaces": [
     "example"

@@ -1,3 +1,4 @@
-export function multiply(a: number, b: number): number {
-  return a * b;
-}
+import { Bone } from './Bone';
+import { Skeleton } from './Skeleton';
+
+export { Bone, Skeleton };
