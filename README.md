@@ -1,5 +1,9 @@
 # react-native-skia-skeleton
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/chicio/react-native-skia-skeleton/ci.yml)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/chicio/react-native-skia-skeleton)
+
+
 A skia skeleton component for react native apps.
 
 ## Installation
