@@ -1,6 +1,6 @@
 # react-native-skia-skeleton
 
-A skia skeleton for react native apps.
+A skia skeleton component for react native apps.
 
 ## Installation
 
