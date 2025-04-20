@@ -119,9 +119,9 @@
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": {
-          "name": "angular",
-          "infile": "CHANGELOG.md"
-        }
+          "name": "angular"
+        },
+        "infile": "CHANGELOG.md"
       }
     }
   },
