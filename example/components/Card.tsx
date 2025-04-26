@@ -35,13 +35,12 @@ export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
           containerStyle={styles.info}
           bones={[
             {
-              display: 'flex',
-              width: '100%',
+              width: '80%',
               height: 16,
               borderRadius: 4,
             },
             {
-              width: 200,
+              width: '80%',
               height: 16,
               borderRadius: 4,
               marginTop: 4,
@@ -119,6 +118,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
     display: 'flex',
     alignItems: 'flex-start',
+    width: '100%',
   },
   name: {
     fontWeight: '600',
