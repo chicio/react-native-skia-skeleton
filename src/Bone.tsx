@@ -84,9 +84,9 @@ export const Bone: React.FC<BoneProps> = ({ layout, colors, animation }) => {
       animation.direction === 'rightToLeft'
   );
 
-  const gradientEnd = useDerivedValue(() =>
-    isHorizontal ? vec(dimensions.width, 0) : vec(0, dimensions.height)
-  );
+  const gradientEnd = isHorizontal.value
+    ? vec(dimensions.width, 0)
+    : vec(0, dimensions.height);
 
   const shimmer = useAnimatedStyle(() =>
     isHorizontal.value
