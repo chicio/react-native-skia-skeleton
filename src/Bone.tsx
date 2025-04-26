@@ -9,6 +9,7 @@ import {
 } from '@shopify/react-native-skia';
 import Animated, {
   useAnimatedStyle,
+  useDerivedValue,
   useSharedValue,
   withRepeat,
   withTiming,
@@ -44,22 +45,18 @@ type BoneProps = {
   animation: BoneAnimation;
 };
 
-const initialPositionFactory: Record<
+const getInitialPosition: Record<
   BoneAnimationDirection,
   (dimensions: BoneDimensions) => number
 > = {
-  ['leftToRight']: (currentDimensions: BoneDimensions) =>
-    -currentDimensions.width,
-  ['rightToLeft']: (currentDimensions: BoneDimensions) =>
-    currentDimensions.width,
-  ['topToBottom']: (currentDimensions: BoneDimensions) =>
-    -currentDimensions.height,
-  ['bottomToTop']: (currentDimensions: BoneDimensions) =>
-    currentDimensions.height,
+  ['leftToRight']: (dimensions: BoneDimensions) => -dimensions.width,
+  ['rightToLeft']: (dimensions: BoneDimensions) => dimensions.width,
+  ['topToBottom']: (dimensions: BoneDimensions) => -dimensions.height,
+  ['bottomToTop']: (dimensions: BoneDimensions) => dimensions.height,
 };
 
 export const Bone: React.FC<BoneProps> = ({ layout, colors, animation }) => {
-  const [dimensions, setDimensions] = useState({
+  const [dimensions, setDimensions] = useState<BoneDimensions>({
     width: 0,
     height: 0,
   });
@@ -71,8 +68,7 @@ export const Bone: React.FC<BoneProps> = ({ layout, colors, animation }) => {
       return;
     }
 
-    const initialPosition =
-      initialPositionFactory[animation.direction](dimensions);
+    const initialPosition = getInitialPosition[animation.direction](dimensions);
 
     animatedValue.value = initialPosition;
     animatedValue.value = withRepeat(
@@ -82,19 +78,21 @@ export const Bone: React.FC<BoneProps> = ({ layout, colors, animation }) => {
     );
   }, [dimensions, animatedValue, animation]);
 
-  const isHorizontal =
-    animation.direction === 'leftToRight' ||
-    animation.direction === 'rightToLeft';
+  const isHorizontal = useDerivedValue(
+    () =>
+      animation.direction === 'leftToRight' ||
+      animation.direction === 'rightToLeft'
+  );
+
+  const gradientEnd = useDerivedValue(() =>
+    isHorizontal ? vec(dimensions.width, 0) : vec(0, dimensions.height)
+  );
 
   const shimmer = useAnimatedStyle(() =>
-    isHorizontal
+    isHorizontal.value
       ? { transform: [{ translateX: animatedValue.value }] }
       : { transform: [{ translateY: animatedValue.value }] }
   );
-
-  const gradientEnd = isHorizontal
-    ? vec(dimensions.width, 0)
-    : vec(0, dimensions.height);
 
   return (
     <View
