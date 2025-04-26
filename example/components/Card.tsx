@@ -19,8 +19,9 @@ export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
           loading={loading}
           bones={[
             {
-              dimensions: { width: 48, height: 48 },
-              border: { borderRadius: 24 },
+              width: 48,
+              height: 48,
+              borderRadius: 24,
             },
           ]}
         >
@@ -34,13 +35,15 @@ export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
           containerStyle={styles.info}
           bones={[
             {
-              dimensions: { width: 200, height: 16 },
-              border: { borderRadius: 4 },
+              width: '80%',
+              height: 16,
+              borderRadius: 4,
             },
             {
-              dimensions: { width: 200, height: 16 },
-              border: { borderRadius: 4 },
-              margins: { marginTop: 4 },
+              width: '80%',
+              height: 16,
+              borderRadius: 4,
+              marginTop: 4,
             },
           ]}
         >
@@ -53,23 +56,27 @@ export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
         containerStyle={styles.body}
         bones={[
           {
-            dimensions: { width: width - cardMargins - 32, height: 16 },
-            border: { borderRadius: 4 },
+            width: width - cardMargins - 32,
+            height: 16,
+            borderRadius: 4,
           },
           {
-            dimensions: { width: 200, height: 16 },
-            border: { borderRadius: 4 },
-            margins: { marginTop: 4 },
+            width: 200,
+            height: 16,
+            borderRadius: 4,
+            marginTop: 4,
           },
           {
-            dimensions: { width: width - cardMargins - 32, height: 16 },
-            border: { borderRadius: 4 },
-            margins: { marginTop: 10 },
+            width: width - cardMargins - 32,
+            height: 16,
+            borderRadius: 4,
+            marginTop: 10,
           },
           {
-            dimensions: { width: 200, height: 16 },
-            border: { borderRadius: 4 },
-            margins: { marginTop: 4 },
+            width: 200,
+            height: 16,
+            borderRadius: 4,
+            marginTop: 4,
           },
         ]}
       >
@@ -111,6 +118,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
     display: 'flex',
     alignItems: 'flex-start',
+    width: '100%',
   },
   name: {
     fontWeight: '600',

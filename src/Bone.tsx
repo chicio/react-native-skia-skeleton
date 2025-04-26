@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, type ViewStyle } from 'react-native';
 import {
   Canvas,
@@ -9,6 +9,7 @@ import {
 } from '@shopify/react-native-skia';
 import Animated, {
   useAnimatedStyle,
+  useDerivedValue,
   useSharedValue,
   withRepeat,
   withTiming,
@@ -36,30 +37,7 @@ export type BoneDimensions = {
   height: number;
 };
 
-export type BoneMargins = Pick<
-  ViewStyle,
-  | 'marginTop'
-  | 'marginBottom'
-  | 'marginLeft'
-  | 'marginRight'
-  | 'marginHorizontal'
-  | 'marginVertical'
->;
-
-type BoneBorderRadius = Pick<
-  ViewStyle,
-  | 'borderRadius'
-  | 'borderTopLeftRadius'
-  | 'borderTopRightRadius'
-  | 'borderBottomLeftRadius'
-  | 'borderBottomRightRadius'
->;
-
-export type BoneLayout = {
-  dimensions: BoneDimensions;
-  margins?: BoneMargins;
-  border?: BoneBorderRadius;
-};
+export type BoneLayout = Omit<ViewStyle, 'backgroundColor'>;
 
 type BoneProps = {
   layout: BoneLayout;
@@ -67,59 +45,68 @@ type BoneProps = {
   animation: BoneAnimation;
 };
 
+const getInitialPosition: Record<
+  BoneAnimationDirection,
+  (dimensions: BoneDimensions) => number
+> = {
+  ['leftToRight']: (dimensions: BoneDimensions) => -dimensions.width,
+  ['rightToLeft']: (dimensions: BoneDimensions) => dimensions.width,
+  ['topToBottom']: (dimensions: BoneDimensions) => -dimensions.height,
+  ['bottomToTop']: (dimensions: BoneDimensions) => dimensions.height,
+};
+
 export const Bone: React.FC<BoneProps> = ({ layout, colors, animation }) => {
-  const { dimensions, margins, border } = layout;
+  const [dimensions, setDimensions] = useState<BoneDimensions>({
+    width: 0,
+    height: 0,
+  });
 
-  const isHorizontal =
-    animation.direction === 'leftToRight' ||
-    animation.direction === 'rightToLeft';
+  const animatedValue = useSharedValue(0);
 
-  const initialPositionFactory: Record<
-    BoneAnimationDirection,
-    (dimensions: BoneDimensions) => number
-  > = {
-    ['leftToRight']: (currentDimensions: BoneDimensions) =>
-      -currentDimensions.width,
-    ['rightToLeft']: (currentDimensions: BoneDimensions) =>
-      currentDimensions.width,
-    ['topToBottom']: (currentDimensions: BoneDimensions) =>
-      -currentDimensions.height,
-    ['bottomToTop']: (currentDimensions: BoneDimensions) =>
-      currentDimensions.height,
-  };
-  const initialPosition =
-    initialPositionFactory[animation.direction](dimensions);
+  useEffect(() => {
+    if (dimensions.width === 0 && dimensions.height === 0) {
+      return;
+    }
 
-  const animatedValue = useSharedValue(initialPosition);
+    const initialPosition = getInitialPosition[animation.direction](dimensions);
 
-  animatedValue.value = withRepeat(
-    withTiming(-initialPosition, { duration: animation.duration }),
-    -1,
-    animation.reverse
+    animatedValue.value = initialPosition;
+    animatedValue.value = withRepeat(
+      withTiming(-initialPosition, { duration: animation.duration }),
+      -1,
+      animation.reverse
+    );
+  }, [dimensions, animatedValue, animation]);
+
+  const isHorizontal = useDerivedValue(
+    () =>
+      animation.direction === 'leftToRight' ||
+      animation.direction === 'rightToLeft'
   );
 
+  const gradientEnd = isHorizontal.value
+    ? vec(dimensions.width, 0)
+    : vec(0, dimensions.height);
+
   const shimmer = useAnimatedStyle(() =>
-    isHorizontal
+    isHorizontal.value
       ? { transform: [{ translateX: animatedValue.value }] }
       : { transform: [{ translateY: animatedValue.value }] }
   );
-
-  const gradientEnd = isHorizontal
-    ? vec(dimensions.width, 0)
-    : vec(0, dimensions.height);
 
   return (
     <View
       style={[
         styles.container,
         {
-          width: dimensions.width,
-          height: dimensions.height,
+          ...layout,
           backgroundColor: colors.background,
-          ...margins,
-          ...border,
         },
       ]}
+      onLayout={(event) => {
+        const { width, height } = event.nativeEvent.layout;
+        setDimensions({ width, height });
+      }}
     >
       <Animated.View style={[StyleSheet.absoluteFill, shimmer]}>
         <Canvas style={StyleSheet.absoluteFill}>
