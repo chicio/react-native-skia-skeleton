@@ -2,15 +2,15 @@ import React from 'react';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { View, type ViewStyle, StyleSheet } from 'react-native';
 import {
-  Bone,
   type BoneAnimation,
   type BoneColors,
-  type BoneLayout,
-} from './Bone';
+  type BoneStyle,
+} from './Bone/BoneFeatures';
+import { Bone } from './Bone/Bone';
 
 type SkeletonProps = {
   loading: boolean;
-  bones: BoneLayout[];
+  bones: BoneStyle[];
   containerStyle?: ViewStyle;
   colors?: BoneColors;
   animation?: BoneAnimation;
