@@ -25,8 +25,8 @@ export const Bone: React.FC<BoneProps> = ({ style, colors, animation }) => {
     <View
       style={[
         styles.container,
+        style,
         {
-          ...style,
           backgroundColor: colors.background,
         },
       ]}

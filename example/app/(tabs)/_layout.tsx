@@ -16,14 +16,14 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'full example',
+          title: 'Cards',
           tabBarIcon: homeTabIcon,
         }}
       />
       <Tabs.Screen
         name="misc"
         options={{
-          title: 'misc examples',
+          title: 'Misc',
           tabBarIcon: misc,
         }}
       />

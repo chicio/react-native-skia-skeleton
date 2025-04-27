@@ -1,4 +1,4 @@
-import type { ViewStyle } from 'react-native';
+import type { StyleProp, ViewStyle } from 'react-native';
 
 export type BoneAnimationDirection =
   | 'leftToRight'
@@ -22,7 +22,7 @@ export type BoneDimensions = {
   height: number;
 };
 
-export type BoneStyle = Omit<ViewStyle, 'backgroundColor'>;
+export type BoneStyle = StyleProp<ViewStyle>;
 
 export type BoneLayout = {
   style: BoneStyle;

@@ -8,7 +8,9 @@ import {
 } from 'react-native';
 import { Skeleton } from 'react-native-skia-skeleton';
 
-export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
+export const CardMixedSkeleton: React.FC<{ loading: boolean }> = ({
+  loading,
+}) => {
   const { width } = useWindowDimensions();
   const cardMargins = 20;
 
