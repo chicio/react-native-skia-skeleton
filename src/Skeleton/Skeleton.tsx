@@ -4,6 +4,7 @@ import { type BoneAnimation, type BoneColors } from '../Bone/BoneFeatures';
 import { Bones } from '../Bones/Bones';
 import { Content } from './Content';
 import type { BonesLayout } from '../Bones/BonesFeatures';
+import { defaultAnimation, defaultColors } from './defaults';
 
 type SkeletonProps = {
   loading: boolean;
@@ -18,8 +19,8 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   loading,
   containerStyle,
   bones,
-  colors = { background: '#E1E9EE', shimmer: '#F2F8FC' },
-  animation = { duration: 1500, direction: 'leftToRight', reverse: false },
+  colors = defaultColors,
+  animation = defaultAnimation,
   children,
 }) =>
   loading ? (
