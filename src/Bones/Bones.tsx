@@ -14,13 +14,15 @@ export const Bones: React.FC<BonesProps> = ({
 }) => {
   const { layout, colors, animation } = bonesFeatures;
 
-  const renderBone = (currentLayout: BonesLayout, key: React.Key) => {
-    const { children, style } = currentLayout;
+  const renderBone = (currentLayout: BonesLayout, parentKey: React.Key) => {
+    const { children, style, key } = currentLayout;
 
     if (children && children.length > 0) {
       return (
         <View style={style} key={key}>
-          {children.map((child, index) => renderBone(child, `${key}-${index}`))}
+          {children.map((child, index) =>
+            renderBone(child, `${parentKey}-${key ?? index}`)
+          )}
         </View>
       );
     }

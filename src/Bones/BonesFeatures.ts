@@ -5,6 +5,7 @@ import type {
 } from '../Bone/BoneFeatures';
 
 export type BonesLayout = {
+  key?: string;
   style: BoneStyle;
   children?: BonesLayout[];
 };

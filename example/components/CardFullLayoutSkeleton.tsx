@@ -15,6 +15,7 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
       loading={loading}
       bonesLayout={[
         {
+          key: 'root',
           style: {
             display: 'flex',
             flex: 1,
@@ -27,6 +28,7 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
           },
           children: [
             {
+              key: 'header',
               style: {
                 width: '100%',
                 borderRadius: 4,
@@ -37,6 +39,7 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
               },
               children: [
                 {
+                  key: 'image',
                   style: {
                     width: 48,
                     height: 48,
