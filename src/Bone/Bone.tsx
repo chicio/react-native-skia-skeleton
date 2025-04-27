@@ -12,12 +12,12 @@ import type { BoneAnimation, BoneColors, BoneStyle } from './BoneFeatures';
 import { useBoneAnimation } from './useBoneAnimation';
 
 export type BoneProps = {
-  layout: BoneStyle;
+  style: BoneStyle;
   colors: BoneColors;
   animation: BoneAnimation;
 };
 
-export const Bone: React.FC<BoneProps> = ({ layout, colors, animation }) => {
+export const Bone: React.FC<BoneProps> = ({ style, colors, animation }) => {
   const { onLayout, boneAnimation, boneGradientEnd, boneDimensions } =
     useBoneAnimation(animation);
 
@@ -26,7 +26,7 @@ export const Bone: React.FC<BoneProps> = ({ layout, colors, animation }) => {
       style={[
         styles.container,
         {
-          ...layout,
+          ...style,
           backgroundColor: colors.background,
         },
       ]}

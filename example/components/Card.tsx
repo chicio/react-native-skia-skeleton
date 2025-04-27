@@ -17,11 +17,13 @@ export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
       <View style={styles.header}>
         <Skeleton
           loading={loading}
-          bones={[
+          bonesLayout={[
             {
-              width: 48,
-              height: 48,
-              borderRadius: 24,
+              style: {
+                width: 48,
+                height: 48,
+                borderRadius: 24,
+              },
             },
           ]}
         >
@@ -33,17 +35,21 @@ export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
         <Skeleton
           loading={loading}
           containerStyle={styles.info}
-          bones={[
+          bonesLayout={[
             {
-              width: '80%',
-              height: 16,
-              borderRadius: 4,
+              style: {
+                width: '80%',
+                height: 16,
+                borderRadius: 4,
+              },
             },
             {
-              width: '80%',
-              height: 16,
-              borderRadius: 4,
-              marginTop: 4,
+              style: {
+                width: '80%',
+                height: 16,
+                borderRadius: 4,
+                marginTop: 4,
+              },
             },
           ]}
         >
@@ -54,29 +60,37 @@ export const Card: React.FC<{ loading: boolean }> = ({ loading }) => {
       <Skeleton
         loading={loading}
         containerStyle={styles.body}
-        bones={[
+        bonesLayout={[
           {
-            width: width - cardMargins - 32,
-            height: 16,
-            borderRadius: 4,
+            style: {
+              width: width - cardMargins - 32,
+              height: 16,
+              borderRadius: 4,
+            },
           },
           {
-            width: 200,
-            height: 16,
-            borderRadius: 4,
-            marginTop: 4,
+            style: {
+              width: 200,
+              height: 16,
+              borderRadius: 4,
+              marginTop: 4,
+            },
           },
           {
-            width: width - cardMargins - 32,
-            height: 16,
-            borderRadius: 4,
-            marginTop: 10,
+            style: {
+              width: width - cardMargins - 32,
+              height: 16,
+              borderRadius: 4,
+              marginTop: 10,
+            },
           },
           {
-            width: 200,
-            height: 16,
-            borderRadius: 4,
-            marginTop: 4,
+            style: {
+              width: 200,
+              height: 16,
+              borderRadius: 4,
+              marginTop: 4,
+            },
           },
         ]}
       >

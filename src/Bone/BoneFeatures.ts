@@ -23,3 +23,8 @@ export type BoneDimensions = {
 };
 
 export type BoneStyle = Omit<ViewStyle, 'backgroundColor'>;
+
+export type BoneLayout = {
+  style: BoneStyle;
+  children?: BoneLayout[];
+};

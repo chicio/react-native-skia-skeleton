@@ -1,16 +1,16 @@
 import React from 'react';
 import Animated, { FadeIn } from 'react-native-reanimated';
-import { View, type ViewStyle, StyleSheet } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 import {
   type BoneAnimation,
   type BoneColors,
-  type BoneStyle,
+  type BoneLayout,
 } from './Bone/BoneFeatures';
 import { Bone } from './Bone/Bone';
 
 type SkeletonProps = {
   loading: boolean;
-  bones: BoneStyle[];
+  bonesLayout: BoneLayout[];
   containerStyle?: ViewStyle;
   colors?: BoneColors;
   animation?: BoneAnimation;
@@ -20,15 +20,20 @@ type SkeletonProps = {
 export const Skeleton: React.FC<SkeletonProps> = ({
   loading,
   containerStyle,
-  bones,
+  bonesLayout,
   colors = { background: '#E1E9EE', shimmer: '#F2F8FC' },
   animation = { duration: 1500, direction: 'leftToRight', reverse: false },
   children,
 }) =>
   loading ? (
     <View style={[styles.bones, containerStyle]}>
-      {bones.map((bone, index) => (
-        <Bone layout={bone} colors={colors} animation={animation} key={index} />
+      {bonesLayout.map((bone, index) => (
+        <Bone
+          style={bone.style}
+          colors={colors}
+          animation={animation}
+          key={index}
+        />
       ))}
     </View>
   ) : (
