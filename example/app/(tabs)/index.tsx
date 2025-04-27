@@ -1,7 +1,8 @@
 import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
-import { Card } from '../../components/Card';
+import { CardMixedSkeleton } from '../../components/CardMixedSkeleton';
+import { CardFullLayoutSkeleton } from '../../components/CardFullLayoutSkeleton';
 
 export default function Index() {
   const [loadingCard, setLoadingCard] = useState(true);
@@ -17,7 +18,8 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
-        <Card loading={loadingCard} />
+        <CardMixedSkeleton loading={loadingCard} />
+        <CardFullLayoutSkeleton loading={loadingCard} />
       </ScrollView>
     </SafeAreaView>
   );

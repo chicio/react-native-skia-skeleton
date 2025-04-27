@@ -1,4 +1,4 @@
-import { Bone } from './Bone';
-import { Skeleton } from './Skeleton';
+import { Bone } from './Bone/Bone';
+import { Skeleton } from './Skeleton/Skeleton';
 
 export { Bone, Skeleton };
