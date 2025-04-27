@@ -19,9 +19,9 @@ export const Bones: React.FC<BonesProps> = ({
 
     if (children && children.length > 0) {
       return (
-        <View style={style} key={key}>
+        <View style={style} key={parentKey}>
           {children.map((child, index) =>
-            renderBone(child, `${parentKey}-${key ?? index}`)
+            renderBone(child, `${parentKey}-${key ?? index}-${index}`)
           )}
         </View>
       );
@@ -34,7 +34,7 @@ export const Bones: React.FC<BonesProps> = ({
           colors,
           animation,
         }}
-        key={key}
+        key={parentKey}
       />
     );
   };
