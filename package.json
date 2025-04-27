@@ -1,6 +1,6 @@
 {
   "name": "react-native-skia-skeleton",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A skia skeleton for react native apps.",
   "source": "./src/index.tsx",
   "main": "./lib/module/index.js",
