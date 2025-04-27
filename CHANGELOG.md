@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 (2025-04-27)
+
+* feat(docs): updated readme video link :bulb: ([ac40b95](https://github.com/chicio/react-native-skia-skeleton/commit/ac40b95))
+* feat(docs): updated readme with new video :bulb: ([f7f21d5](https://github.com/chicio/react-native-skia-skeleton/commit/f7f21d5))
+
 ## 0.3.0 (2025-04-27)
 
 * feat(animation): animation trigger + custom view style for bones :bulb: ([f8b8b78](https://github.com/chicio/react-native-skia-skeleton/commit/f8b8b78))
