@@ -1,16 +1,13 @@
 import React from 'react';
 import { type ViewStyle } from 'react-native';
-import {
-  type BoneAnimation,
-  type BoneColors,
-  type BoneLayout,
-} from '../Bone/BoneFeatures';
+import { type BoneAnimation, type BoneColors } from '../Bone/BoneFeatures';
 import { Bones } from '../Bones/Bones';
 import { Content } from './Content';
+import type { BonesLayout } from '../Bones/BonesFeatures';
 
 type SkeletonProps = {
   loading: boolean;
-  bonesLayout: BoneLayout[];
+  bonesLayout: BonesLayout[];
   containerStyle?: ViewStyle;
   colors?: BoneColors;
   animation?: BoneAnimation;
@@ -27,9 +24,11 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 }) =>
   loading ? (
     <Bones
-      bonesLayout={bonesLayout}
-      colors={colors}
-      animation={animation}
+      bonesFeatures={{
+        colors,
+        animation,
+        layout: bonesLayout,
+      }}
       containerStyle={containerStyle}
     />
   ) : (

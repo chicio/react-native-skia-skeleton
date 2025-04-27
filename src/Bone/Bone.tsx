@@ -8,16 +8,15 @@ import {
   vec,
 } from '@shopify/react-native-skia';
 import Animated from 'react-native-reanimated';
-import type { BoneAnimation, BoneColors, BoneStyle } from './BoneFeatures';
+import type { BoneFeatures } from './BoneFeatures';
 import { useBoneAnimation } from './useBoneAnimation';
 
 export type BoneProps = {
-  style: BoneStyle;
-  colors: BoneColors;
-  animation: BoneAnimation;
+  features: BoneFeatures;
 };
 
-export const Bone: React.FC<BoneProps> = ({ style, colors, animation }) => {
+export const Bone: React.FC<BoneProps> = ({ features }) => {
+  const { style, animation, colors } = features;
   const { onLayout, boneAnimation, boneGradientEnd, boneDimensions } =
     useBoneAnimation(animation);
 

@@ -17,14 +17,10 @@ export type BoneAnimation = {
   reverse: boolean;
 };
 
-export type BoneDimensions = {
-  width: number;
-  height: number;
-};
-
 export type BoneStyle = StyleProp<ViewStyle>;
 
-export type BoneLayout = {
+export type BoneFeatures = {
   style: BoneStyle;
-  children?: BoneLayout[];
+  colors: BoneColors;
+  animation: BoneAnimation;
 };

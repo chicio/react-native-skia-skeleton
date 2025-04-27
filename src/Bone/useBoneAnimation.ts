@@ -1,8 +1,4 @@
-import type {
-  BoneAnimation,
-  BoneAnimationDirection,
-  BoneDimensions,
-} from './BoneFeatures';
+import type { BoneAnimation, BoneAnimationDirection } from './BoneFeatures';
 import { useCallback, useEffect, useState } from 'react';
 import {
   useAnimatedStyle,
@@ -14,19 +10,24 @@ import {
 import type { LayoutChangeEvent } from 'react-native';
 import { vec } from '@shopify/react-native-skia';
 
+export type Dimensions = {
+  width: number;
+  height: number;
+};
+
 const getInitialPosition: Record<
   BoneAnimationDirection,
-  (dimensions: BoneDimensions) => number
+  (dimensions: Dimensions) => number
 > = {
-  ['leftToRight']: (dimensions: BoneDimensions) => -dimensions.width,
-  ['rightToLeft']: (dimensions: BoneDimensions) => dimensions.width,
-  ['topToBottom']: (dimensions: BoneDimensions) => -dimensions.height,
-  ['bottomToTop']: (dimensions: BoneDimensions) => dimensions.height,
+  ['leftToRight']: (dimensions: Dimensions) => -dimensions.width,
+  ['rightToLeft']: (dimensions: Dimensions) => dimensions.width,
+  ['topToBottom']: (dimensions: Dimensions) => -dimensions.height,
+  ['bottomToTop']: (dimensions: Dimensions) => dimensions.height,
 };
 
 export const useBoneAnimation = (animation: BoneAnimation) => {
   const animatedValue = useSharedValue(0);
-  const [boneDimensions, setBoneDimensions] = useState<BoneDimensions>({
+  const [boneDimensions, setBoneDimensions] = useState<Dimensions>({
     width: 0,
     height: 0,
   });

@@ -11,7 +11,7 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
         background: '#C1C4E9',
         shimmer: '#F1CEF7',
       }}
-      containerStyle={{ flex: 1, width: '100%' }}
+      containerStyle={styles.container}
       loading={loading}
       bonesLayout={[
         {
@@ -146,6 +146,10 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+  },
   card: {
     backgroundColor: '#FFF',
     padding: 16,
