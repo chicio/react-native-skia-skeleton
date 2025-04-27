@@ -19,7 +19,7 @@ export const CardMixedSkeleton: React.FC<{ loading: boolean }> = ({
       <View style={styles.header}>
         <Skeleton
           loading={loading}
-          bonesLayout={[
+          bones={[
             {
               style: {
                 width: 48,
@@ -37,7 +37,7 @@ export const CardMixedSkeleton: React.FC<{ loading: boolean }> = ({
         <Skeleton
           loading={loading}
           containerStyle={styles.info}
-          bonesLayout={[
+          bones={[
             {
               style: {
                 width: '80%',
@@ -62,7 +62,7 @@ export const CardMixedSkeleton: React.FC<{ loading: boolean }> = ({
       <Skeleton
         loading={loading}
         containerStyle={styles.body}
-        bonesLayout={[
+        bones={[
           {
             style: {
               width: width - cardMargins - 32,

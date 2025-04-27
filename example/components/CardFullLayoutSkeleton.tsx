@@ -13,7 +13,7 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
       }}
       containerStyle={styles.container}
       loading={loading}
-      bonesLayout={[
+      bones={[
         {
           key: 'root',
           style: {

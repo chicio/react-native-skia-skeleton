@@ -7,7 +7,7 @@ import type { BonesLayout } from '../Bones/BonesFeatures';
 
 type SkeletonProps = {
   loading: boolean;
-  bonesLayout: BonesLayout[];
+  bones: BonesLayout[];
   containerStyle?: ViewStyle;
   colors?: BoneColors;
   animation?: BoneAnimation;
@@ -17,7 +17,7 @@ type SkeletonProps = {
 export const Skeleton: React.FC<SkeletonProps> = ({
   loading,
   containerStyle,
-  bonesLayout,
+  bones,
   colors = { background: '#E1E9EE', shimmer: '#F2F8FC' },
   animation = { duration: 1500, direction: 'leftToRight', reverse: false },
   children,
@@ -27,7 +27,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
       bonesFeatures={{
         colors,
         animation,
-        layout: bonesLayout,
+        layout: bones,
       }}
       containerStyle={containerStyle}
     />
