@@ -16,7 +16,7 @@ npm install react-native-skia-skeleton
 
 See the [example](https://github.com/chicio/react-native-skia-skeleton/tree/main/example) folder to check how the library works.
 
-![Video documentation](https://github.com/chicio/react-native-skia-skeleton/blob/docs/assets/video-documentation.gif?raw=true)
+![Video documentation](https://github.com/chicio/react-native-skia-skeleton/blob/main/assets/video-documentation.gif?raw=true)
 
 ## Contributing
 
