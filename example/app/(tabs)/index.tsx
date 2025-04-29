@@ -1,40 +1,30 @@
-import { ScrollView, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useEffect, useState } from 'react';
+import { Button, ScrollView, StyleSheet } from 'react-native';
+import { useState } from 'react';
 import { CardMixedSkeleton } from '../../components/CardMixedSkeleton';
 import { CardFullLayoutSkeleton } from '../../components/CardFullLayoutSkeleton';
+import { CardAutomaticSkeleton } from '../../components/CardAutomaticSkeleton';
 
 export default function Index() {
   const [loadingCard, setLoadingCard] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLoadingCard((prevLoadingCard) => !prevLoadingCard);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        <CardMixedSkeleton loading={loadingCard} />
-        <CardFullLayoutSkeleton loading={loadingCard} />
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView contentContainerStyle={styles.scrollView}>
+      <Button onPress={() => setLoadingCard(!loadingCard)} title={'Trigger'} />
+      <CardMixedSkeleton loading={loadingCard} />
+      <CardFullLayoutSkeleton loading={loadingCard} />
+      <CardAutomaticSkeleton loading={loadingCard} />
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container: {},
+  scrollView: {
     flex: 1,
     backgroundColor: '#DDDDDD',
-  },
-  scrollView: {
     gap: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    margin: 10,
+    padding: 10,
   },
 });

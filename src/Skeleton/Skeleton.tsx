@@ -5,10 +5,11 @@ import { Bones } from '../Bones/Bones';
 import { Content } from './Content';
 import type { BonesLayout } from '../Bones/BonesFeatures';
 import { defaultAnimation, defaultColors } from './defaults';
+import { useBoneFeatures } from '../Bones/useBoneFeatures';
 
 type SkeletonProps = {
   loading: boolean;
-  bones: BonesLayout[];
+  bones?: BonesLayout[];
   containerStyle?: ViewStyle;
   colors?: BoneColors;
   animation?: BoneAnimation;
@@ -22,16 +23,19 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   colors = defaultColors,
   animation = defaultAnimation,
   children,
-}) =>
-  loading ? (
+}) => {
+  const calculatedBones = useBoneFeatures(bones, children);
+
+  return loading ? (
     <Bones
       bonesFeatures={{
         colors,
         animation,
-        layout: bones,
+        layout: calculatedBones,
       }}
       containerStyle={containerStyle}
     />
   ) : (
     <Content containerStyle={containerStyle}>{children}</Content>
   );
+};

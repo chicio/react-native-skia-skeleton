@@ -1,7 +1,7 @@
 import React from 'react';
 import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native';
-import { Bone } from 'react-native-skia-skeleton';
 import type { BonesFeatures, BonesLayout } from './BonesFeatures';
+import { Bone } from '../Bone/Bone';
 
 type BonesProps = {
   bonesFeatures: BonesFeatures;

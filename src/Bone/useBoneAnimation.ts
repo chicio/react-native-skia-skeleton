@@ -45,11 +45,13 @@ export const useBoneAnimation = (animation: BoneAnimation) => {
     const initialPosition =
       getInitialPosition[animation.direction](boneDimensions);
 
-    animatedValue.value = initialPosition;
-    animatedValue.value = withRepeat(
-      withTiming(-initialPosition, { duration: animation.duration }),
-      -1,
-      animation.reverse
+    animatedValue.set(() => initialPosition);
+    animatedValue.set(() =>
+      withRepeat(
+        withTiming(-initialPosition, { duration: animation.duration }),
+        -1,
+        animation.reverse
+      )
     );
   }, [boneDimensions, animatedValue, animation]);
 
@@ -60,12 +62,12 @@ export const useBoneAnimation = (animation: BoneAnimation) => {
   );
 
   const boneAnimation = useAnimatedStyle(() =>
-    isHorizontal.value
+    isHorizontal.get()
       ? { transform: [{ translateX: animatedValue.value }] }
       : { transform: [{ translateY: animatedValue.value }] }
   );
 
-  const boneGradientEnd = isHorizontal.value
+  const boneGradientEnd = isHorizontal.get()
     ? vec(boneDimensions.width, 0)
     : vec(0, boneDimensions.height);
 
