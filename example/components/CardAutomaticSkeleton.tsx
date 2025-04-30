@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#111',
     width: '80%',
-    height: 16,
+    height: 20,
   },
   subtitle: {
     fontSize: 14,
     color: '#666',
     width: '80%',
-    height: 16,
+    height: 20,
   },
   body: {
     marginTop: 8,
@@ -88,6 +88,6 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 6,
     width: '80%',
-    height: 14,
+    height: 20,
   },
 });
