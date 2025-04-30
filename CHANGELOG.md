@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0 (2025-04-30)
+
+* fix(example): fix height ([d0d6190](https://github.com/chicio/react-native-skia-skeleton/commit/d0d6190))
+* feat(docs): update video ([5a35b9b](https://github.com/chicio/react-native-skia-skeleton/commit/5a35b9b))
+
 ## 0.5.0 (2025-04-30)
 
 * feat(automatic-children): calculate bones layout automatically for children ([cd62abd](https://github.com/chicio/react-native-skia-skeleton/commit/cd62abd))
