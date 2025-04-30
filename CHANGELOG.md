@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 (2025-04-30)
+
+* feat(automatic-children): calculate bones layout automatically for children ([cd62abd](https://github.com/chicio/react-native-skia-skeleton/commit/cd62abd))
+* feat(automatic-children): calculate bones layout automatically for children ([58e6601](https://github.com/chicio/react-native-skia-skeleton/commit/58e6601))
+* feat(automatic-children): calculate bones layout automatically for children ([ed1677c](https://github.com/chicio/react-native-skia-skeleton/commit/ed1677c))
+* fix(bones): fixed keys for bones :rocket: ([c2cc869](https://github.com/chicio/react-native-skia-skeleton/commit/c2cc869))
+* fix(docs): fixed readme link :rocket: ([bc7c7df](https://github.com/chicio/react-native-skia-skeleton/commit/bc7c7df))
+
 ## 0.4.0 (2025-04-27)
 
 * feat(docs): updated readme video link :bulb: ([ac40b95](https://github.com/chicio/react-native-skia-skeleton/commit/ac40b95))
