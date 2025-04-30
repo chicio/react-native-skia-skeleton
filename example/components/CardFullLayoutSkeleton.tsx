@@ -18,7 +18,6 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
           key: 'root',
           style: {
             display: 'flex',
-            flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
             gap: 10,
@@ -150,8 +149,8 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: '100%',
+    display: 'flex',
   },
   card: {
     backgroundColor: '#FFF',
@@ -161,7 +160,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     elevation: 3,
-    marginBottom: 16,
   },
   header: {
     flexDirection: 'row',

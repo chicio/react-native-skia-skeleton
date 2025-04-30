@@ -32,7 +32,8 @@ export const CardAutomaticSkeleton: React.FC<{ loading: boolean }> = ({
           </Text>
           <Text style={styles.text}>
             Also, huge thanks to the team for the feedback during our last
-            review.
+            review. It was a pleasure to collaborate on this kind of task that
+            give me such a boost.
           </Text>
         </View>
       </View>
@@ -42,7 +43,6 @@ export const CardAutomaticSkeleton: React.FC<{ loading: boolean }> = ({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: '100%',
   },
   card: {
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     elevation: 3,
-    marginBottom: 16,
   },
   header: {
     flexDirection: 'row',
@@ -71,15 +70,20 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'flex-start',
     width: '100%',
+    gap: 4,
   },
   name: {
     fontWeight: '600',
     fontSize: 16,
     color: '#111',
+    width: '80%',
+    height: 16,
   },
   subtitle: {
     fontSize: 14,
     color: '#666',
+    width: '80%',
+    height: 16,
   },
   body: {
     marginTop: 8,
@@ -88,5 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#333',
     marginBottom: 6,
+    width: '80%',
+    height: 14,
   },
 });

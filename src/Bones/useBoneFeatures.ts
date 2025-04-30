@@ -42,9 +42,5 @@ export const useBoneFeatures = (
     return bones;
   }
 
-  const bonesLayouts = calculateBonesLayout([], children);
-
-  console.log(JSON.stringify(bonesLayouts));
-
-  return bonesLayouts;
+  return calculateBonesLayout([], children);
 };
