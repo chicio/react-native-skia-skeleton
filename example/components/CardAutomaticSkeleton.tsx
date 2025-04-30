@@ -26,14 +26,9 @@ export const CardAutomaticSkeleton: React.FC<{ loading: boolean }> = ({
           </View>
         </View>
         <View style={styles.body}>
+          <Text style={styles.text}>Just finished the first draft!</Text>
           <Text style={styles.text}>
-            Just finished the first draft of the new onboarding flow. Can’t wait
-            to share it!
-          </Text>
-          <Text style={styles.text}>
-            Also, huge thanks to the team for the feedback during our last
-            review. It was a pleasure to collaborate on this kind of task that
-            give me such a boost.
+            Huge thanks to the team for the feedback!
           </Text>
         </View>
       </View>
