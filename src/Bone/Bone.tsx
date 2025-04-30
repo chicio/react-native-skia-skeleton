@@ -22,13 +22,7 @@ export const Bone: React.FC<BoneProps> = ({ features }) => {
 
   return (
     <View
-      style={[
-        styles.container,
-        style,
-        {
-          backgroundColor: colors.background,
-        },
-      ]}
+      style={[styles.container, style, { backgroundColor: colors.background }]}
       onLayout={onLayout}
     >
       <Animated.View style={[StyleSheet.absoluteFill, boneAnimation]}>
