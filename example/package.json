@@ -1,8 +1,9 @@
 {
   "name": "react-native-skia-skeleton-example",
   "version": "1.0.0",
-  "main": "expo-router/entry",
+  "main": "index",
   "scripts": {
+    "setup-skia-for-web": "setup-skia-web public",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
