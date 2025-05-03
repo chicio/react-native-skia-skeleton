@@ -1844,6 +1844,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@egjs/hammerjs@npm:^2.0.17":
+  version: 2.0.17
+  resolution: "@egjs/hammerjs@npm:2.0.17"
+  dependencies:
+    "@types/hammerjs": ^2.0.36
+  checksum: 8945137cec5837edd70af3f2e0ea621543eb0aa3b667e6269ec6485350f4d120c2434b37c7c30b1cf42a65275dd61c1f24626749c616696d3956ac0c008c4766
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
   version: 4.6.1
   resolution: "@eslint-community/eslint-utils@npm:4.6.1"
@@ -3275,6 +3284,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-navigation/drawer@npm:^7.3.10":
+  version: 7.3.10
+  resolution: "@react-navigation/drawer@npm:7.3.10"
+  dependencies:
+    "@react-navigation/elements": ^2.4.0
+    color: ^4.2.3
+    react-native-drawer-layout: ^4.1.7
+    use-latest-callback: ^0.2.3
+  peerDependencies:
+    "@react-navigation/native": ^7.1.7
+    react: ">= 18.2.0"
+    react-native: 0.79.2
+    react-native-gesture-handler: ~2.25.0
+    react-native-reanimated: ">= 2.0.0"
+    react-native-safe-area-context: 5.4.0
+    react-native-screens: ~4.10.0
+  checksum: c700f5390e08b3d99b2983ab9ab2f22eb5bdaf8918ce0a68cd75b120fee34adbf4000354458a3bfdf80a727ef0d1980e07cb2fa5c4e40351822941703bfed47d
+  languageName: node
+  linkType: hard
+
 "@react-navigation/elements@npm:^2.3.8":
   version: 2.3.8
   resolution: "@react-navigation/elements@npm:2.3.8"
@@ -3290,6 +3319,24 @@ __metadata:
     "@react-native-masked-view/masked-view":
       optional: true
   checksum: a6a64b887882fc029a828ba6f3ba5a98b6be963701a761a52605d38e637455bb6ce71059b5dcef2a193c9eee66171893d885399f4b0ae6dbe7479143122834b7
+  languageName: node
+  linkType: hard
+
+"@react-navigation/elements@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "@react-navigation/elements@npm:2.4.0"
+  dependencies:
+    color: ^4.2.3
+  peerDependencies:
+    "@react-native-masked-view/masked-view": ">= 0.2.0"
+    "@react-navigation/native": ^7.1.7
+    react: ">= 18.2.0"
+    react-native: 0.79.2
+    react-native-safe-area-context: 5.4.0
+  peerDependenciesMeta:
+    "@react-native-masked-view/masked-view":
+      optional: true
+  checksum: 394100f0b9d506d0c4967d8e9cf1e3439f7ccf222c0c4a3965ad237385c118830f3c15e8de339b41653d319404c0ef8a7b463fea40ea79a3b92487d5867425cc
   languageName: node
   linkType: hard
 
@@ -3503,6 +3550,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 79d746a8f053954bba36bd3d94a90c78de995d126289d656fb3271dd9f1229d33f678da04d10bce6be440494a5a73438e2e363e92802d16b8315b051036c5256
+  languageName: node
+  linkType: hard
+
+"@types/hammerjs@npm:^2.0.36":
+  version: 2.0.46
+  resolution: "@types/hammerjs@npm:2.0.46"
+  checksum: caba6ec788d19905c71092670b58514b3d1f5eee5382bf9205e8df688d51e7857b7994e2dd7aed57fac8977bdf0e456d67fbaf23440a4385b8ce25fe2af1ec39
   languageName: node
   linkType: hard
 
@@ -7875,6 +7929,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hoist-non-react-statics@npm:^3.3.0":
+  version: 3.3.2
+  resolution: "hoist-non-react-statics@npm:3.3.2"
+  dependencies:
+    react-is: ^16.7.0
+  checksum: b1538270429b13901ee586aa44f4cc3ecd8831c061d06cb8322e50ea17b3f5ce4d0e2e66394761e6c8e152cd8c34fb3b4b690116c6ce2bd45b18c746516cb9e8
+  languageName: node
+  linkType: hard
+
 "hosted-git-info@npm:^4.0.1":
   version: 4.1.0
   resolution: "hosted-git-info@npm:4.1.0"
@@ -12089,7 +12152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.13.1":
+"react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
@@ -12132,6 +12195,35 @@ __metadata:
   bin:
     bob: bin/bob
   checksum: 908cb25a13c73b8182382ca6f00d24b432fc9a8fe2b21a6d74c8d0c615f9412d6f16799ca87516e745bf3306c126aaeb4ac45f5230e6af0004e8216e2990137b
+  languageName: node
+  linkType: hard
+
+"react-native-drawer-layout@npm:^4.1.7":
+  version: 4.1.7
+  resolution: "react-native-drawer-layout@npm:4.1.7"
+  dependencies:
+    use-latest-callback: ^0.2.3
+  peerDependencies:
+    react: ">= 18.2.0"
+    react-native: 0.79.2
+    react-native-gesture-handler: ~2.25.0
+    react-native-reanimated: ">= 2.0.0"
+  checksum: 18886dfbc8c8482b1dd16b2e1bbd484d2addae20402cd084c37c578025cd1c7e1a3fe796186e944582201c3ba2919a3b4a4d12c49e75b88f7a537e4acbfd0220
+  languageName: node
+  linkType: hard
+
+"react-native-gesture-handler@npm:~2.20.2":
+  version: 2.20.2
+  resolution: "react-native-gesture-handler@npm:2.20.2"
+  dependencies:
+    "@egjs/hammerjs": ^2.0.17
+    hoist-non-react-statics: ^3.3.0
+    invariant: ^2.2.4
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 8d9e7496615dad4e6bb6dd1c750c2d3b2e57c6173a1d466b4503b28b159b1dbbb1e7527c3d4bda12324422200c07835f34d81c9bd3cd1b7f594b22949bef274a
   languageName: node
   linkType: hard
 
@@ -12234,6 +12326,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.0
     "@expo/metro-runtime": ~4.0.1
+    "@react-navigation/drawer": ^7.3.10
     "@shopify/react-native-skia": 1.5.0
     expo: ~52.0.46
     expo-constants: ~17.0.8
@@ -12244,6 +12337,7 @@ __metadata:
     react-dom: 18.3.1
     react-native: 0.76.9
     react-native-builder-bob: ^0.40.5
+    react-native-gesture-handler: ~2.20.2
     react-native-reanimated: ~3.16.1
     react-native-safe-area-context: 4.12.0
     react-native-screens: ~4.4.0
@@ -14477,7 +14571,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-latest-callback@npm:^0.2.1":
+"use-latest-callback@npm:^0.2.1, use-latest-callback@npm:^0.2.3":
   version: 0.2.3
   resolution: "use-latest-callback@npm:0.2.3"
   peerDependencies:
