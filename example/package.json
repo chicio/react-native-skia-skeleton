@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "main": "index",
   "scripts": {
-    "setup-skia-for-web": "setup-skia-web public",
+    "setup-skia-for-web": "setup-skia-web",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "publish": "expo export -p web",
+    "serve": "expo serve",
+    "deploy": "eas deploy"
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
