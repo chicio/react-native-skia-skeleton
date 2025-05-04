@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Platform, Text, View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
+import { ActivityIndicator } from 'react-native-paper';
 
 export default function RootLayout() {
   const [isSkiaReady, setIsSkiaReady] = useState(Platform.OS !== 'web');
@@ -10,14 +11,14 @@ export default function RootLayout() {
     if (Platform.OS === 'web') {
       setInterval(() => {
         setIsSkiaReady(true);
-      }, 100);
+      }, 3000);
     }
   }, []);
 
   if (!isSkiaReady) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Loading...</Text>
+        <ActivityIndicator size="large" />
       </View>
     );
   }

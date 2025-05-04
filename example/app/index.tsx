@@ -1,11 +1,11 @@
 import { Button, ScrollView, StyleSheet } from 'react-native';
 import { useState } from 'react';
-import { CardMixedSkeleton } from '../../components/CardMixedSkeleton';
-import { CardFullLayoutSkeleton } from '../../components/CardFullLayoutSkeleton';
-import { CardAutomaticSkeleton } from '../../components/CardAutomaticSkeleton';
+import { CardMixedSkeleton } from '../components/CardMixedSkeleton';
+import { CardFullLayoutSkeleton } from '../components/CardFullLayoutSkeleton';
+import { CardAutomaticSkeleton } from '../components/CardAutomaticSkeleton';
 
 export default function Index() {
-  const [loadingCard, setLoadingCard] = useState(true);
+  const [loadingCard, setLoadingCard] = useState(false);
 
   return (
     <ScrollView contentContainerStyle={styles.scrollView}>
@@ -18,7 +18,6 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  container: {},
   scrollView: {
     flex: 1,
     backgroundColor: '#DDDDDD',
