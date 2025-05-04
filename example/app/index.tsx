@@ -1,46 +1,47 @@
-import {
-  Dimensions,
-  FlatList,
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { FlatList, Image, StyleSheet, View } from 'react-native';
 import { Icon, Text, useTheme } from 'react-native-paper';
 import { SkeletonExample } from '../components/SkeletonExample';
 import { Paragraph } from '../components/Paragraph';
 import { Title } from '../components/Title';
+import { Link } from '../components/Link';
+import { useState } from 'react';
+import { RectangleExample } from '../components/RectangleExample';
+import { Container } from '../components/Container';
 
 export default function HomeScreen() {
-  const { colors, fonts } = useTheme();
+  const { fonts } = useTheme();
+  const [loading, setLoading] = useState(false);
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <Container>
       <Title>react-native-skia-skeleton</Title>
       <Paragraph>
-        A performant, customizable and animated skeleton loader built with React
-        Native Skia and Reanimated. This library helps you show a beautiful
-        placeholder while loading content in your mobile or web app.
+        A{' '}
+        <Text style={styles.italic}>
+          performant, customizable and animated skeleton loader
+        </Text>{' '}
+        built with{' '}
+        <Link href="https://shopify.github.io/react-native-skia/">
+          React Native Skia
+        </Link>{' '}
+        and{' '}
+        <Link href={'https://docs.swmansion.com/react-native-reanimated/'}>
+          React Native Reanimated
+        </Link>
+        . This library helps you show a beautiful placeholder while loading
+        content in your mobile or web app.
       </Paragraph>
       <SkeletonExample
+        exampleIdentifier={'homeExample'}
+        loading={loading}
+        onValueChange={(_, value) => setLoading(value)}
         bones={[{ style: { width: 300, height: 100, borderRadius: 8 } }]}
       >
-        <View
-          style={{
-            width: 300,
-            height: 100,
-            borderRadius: 8,
-            backgroundColor: colors.inversePrimary,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <RectangleExample>
           <Text style={{ color: 'white', ...fonts.titleMedium }}>
             Try it out!
           </Text>
-        </View>
+        </RectangleExample>
       </SkeletonExample>
       <Paragraph>
         Designed to help you build visually engaging apps, it supports shimmer
@@ -51,17 +52,13 @@ export default function HomeScreen() {
       <Image
         resizeMode="contain"
         source={require('../../assets/video-documentation.gif')}
-        style={{
-          width: '100%',
-          height: 'auto',
-          aspectRatio: 16 / 9,
-        }}
+        style={styles.image}
       />
       <Paragraph>Main features of the library include:</Paragraph>
       <FlatList
         scrollEnabled={false}
         data={[
-          'High performances thanks to react native skia and react native reanimated',
+          'High performances thanks to React Native Skia and React Native Reanimated',
           'Full support for Android, iOS, and Web',
           'RTL compatible and easily themeable',
           'Zero dependencies outside of Skia and Reanimated',
@@ -73,23 +70,23 @@ export default function HomeScreen() {
           </View>
         )}
       />
-    </ScrollView>
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    width: Platform.OS !== 'web' ? Dimensions.get('screen').width : undefined,
-    maxWidth: 900,
-    alignSelf: 'center',
-  },
   item: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     paddingVertical: 8,
   },
-  tryItOut: {
-  }
+  italic: {
+    fontStyle: 'italic',
+  },
+  image: {
+    width: '100%',
+    height: 'auto',
+    aspectRatio: 16 / 9,
+  },
 });

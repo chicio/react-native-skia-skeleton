@@ -11,6 +11,6 @@ export const Paragraph: React.FC<{ children: ReactNode }> = ({ children }) => (
 
 const styles = StyleSheet.create({
   paragraph: {
-    marginVertical: spacing.spacing,
+    marginVertical: spacing.base,
   },
 });

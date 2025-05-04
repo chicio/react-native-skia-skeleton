@@ -1,7 +1,7 @@
 import { MD3LightTheme as DefaultTheme } from 'react-native-paper';
 
 export const spacing = {
-  spacing: 8,
+  base: 8,
   spacing2x: 16,
   spacing3x: 24,
   spacing4x: 32,

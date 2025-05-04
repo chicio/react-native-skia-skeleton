@@ -1,46 +1,32 @@
-import { ScrollView } from 'react-native';
-import { Text, Card, Title, Paragraph } from 'react-native-paper';
+import { Card, Text } from 'react-native-paper';
+import { Container } from '../components/Container';
+import { Title } from '../components/Title';
+import { Paragraph } from '../components/Paragraph';
 
 export default function UsageScreen() {
   return (
-    <ScrollView
-      contentContainerStyle={{
-        padding: 16,
-        maxWidth: 900,
-        alignSelf: 'center',
-      }}
-    >
-      <Card mode="outlined" style={{ marginBottom: 16 }}>
-        <Card.Content>
-          <Title>Installation</Title>
-          <Paragraph>
-            You can install{' '}
-            <Text variant="bodyMedium" style={{ fontWeight: 'bold' }}>
-              react-native-skia-skeleton
-            </Text>{' '}
-            with npm or yarn:
-          </Paragraph>
-          <Paragraph style={{ fontFamily: 'monospace', marginVertical: 8 }}>
-            npm install react-native-skia-skeleton
-          </Paragraph>
-          <Paragraph>or</Paragraph>
-          <Paragraph style={{ fontFamily: 'monospace', marginVertical: 8 }}>
-            yarn add react-native-skia-skeleton
-          </Paragraph>
-        </Card.Content>
-      </Card>
-
-      <Card mode="outlined" style={{ marginBottom: 16 }}>
-        <Card.Content>
-          <Title>Peer Dependencies</Title>
-          <Paragraph>
-            This library requires{' '}
-            <Text style={{ fontWeight: 'bold' }}>react-native-reanimated</Text>{' '}
-            and <Text style={{ fontWeight: 'bold' }}>react-native-skia</Text> to
-            be installed and configured in your project.
-          </Paragraph>
-        </Card.Content>
-      </Card>
+    <Container>
+      <Title>Installation</Title>
+      <Paragraph>
+        You can install{' '}
+        <Text variant="bodyMedium" style={{ fontWeight: 'bold' }}>
+          react-native-skia-skeleton
+        </Text>{' '}
+        with npm or yarn:
+      </Paragraph>
+      <Paragraph style={{ fontFamily: 'monospace', marginVertical: 8 }}>
+        npm install react-native-skia-skeleton
+      </Paragraph>
+      <Paragraph>or</Paragraph>
+      <Paragraph style={{ fontFamily: 'monospace', marginVertical: 8 }}>
+        yarn add react-native-skia-skeleton
+      </Paragraph>
+      <Paragraph>
+        This library requires{' '}
+        <Text style={{ fontWeight: 'bold' }}>react-native-reanimated</Text> and{' '}
+        <Text style={{ fontWeight: 'bold' }}>react-native-skia</Text> to be
+        installed and configured in your project.
+      </Paragraph>
 
       <Card mode="outlined" style={{ marginBottom: 16 }}>
         <Card.Content>
@@ -91,6 +77,6 @@ export default function App() {
           </Paragraph>
         </Card.Content>
       </Card>
-    </ScrollView>
+    </Container>
   );
 }
