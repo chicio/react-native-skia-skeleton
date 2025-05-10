@@ -39,10 +39,12 @@ export default function RootLayout() {
             name="index"
             options={{ drawerLabel: 'Home', title }}
           />
-          <Drawer.Screen
-            name="usage"
-            options={{ drawerLabel: 'Usage', title }}
-          />
+          {Platform.OS === 'web' && (
+            <Drawer.Screen
+              name="usage"
+              options={{ drawerLabel: 'Usage', title }}
+            />
+          )}
           <Drawer.Screen
             name="examples"
             options={{ drawerLabel: 'Examples', title }}

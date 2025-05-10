@@ -1,5 +1,5 @@
-import { FlatList, Image, StyleSheet, View } from 'react-native';
-import { Icon, Text, useTheme } from 'react-native-paper';
+import { FlatList, Image, StyleSheet } from 'react-native';
+import { Text, useTheme } from 'react-native-paper';
 import { SkeletonExample } from '../components/SkeletonExample';
 import { Paragraph } from '../components/Paragraph';
 import { Title } from '../components/Title';
@@ -7,6 +7,7 @@ import { Link } from '../components/Link';
 import { useState } from 'react';
 import { RectangleExample } from '../components/RectangleExample';
 import { Container } from '../components/Container';
+import { ListItem } from '../components/ListItem';
 
 export default function HomeScreen() {
   const { fonts } = useTheme();
@@ -63,12 +64,7 @@ export default function HomeScreen() {
           'RTL compatible and easily themeable',
           'Zero dependencies outside of Skia and Reanimated',
         ]}
-        renderItem={(info) => (
-          <View style={styles.item}>
-            <Icon size={8} source={'circle'} />
-            <Text variant={'bodyLarge'}>{info.item}</Text>
-          </View>
-        )}
+        renderItem={(info) => <ListItem text={info.item} />}
       />
     </Container>
   );

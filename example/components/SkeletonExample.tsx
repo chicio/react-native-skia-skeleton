@@ -1,6 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 import { StyleSheet, Switch, View, type ViewStyle } from 'react-native';
-import { spacing } from './theme';
+import { borderRadius, spacing } from './theme';
 import { useTheme } from 'react-native-paper';
 import { Skeleton } from 'react-native-skia-skeleton';
 import type { BonesLayout } from '../../src/Bones/BonesFeatures';
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     gap: spacing.spacing2x,
-    borderRadius: 8,
+    borderRadius,
     marginVertical: spacing.spacing2x,
     paddingVertical: spacing.spacing2x,
   },
