@@ -7,16 +7,14 @@ import type { BonesLayout } from '../../src/Bones/BonesFeatures';
 import type { BoneAnimation, BoneColors } from '../../src/Bone/BoneFeatures';
 
 export const SkeletonExample: FC<{
-  exampleIdentifier: string;
   loading: boolean;
-  onValueChange: (exampleName: string, loading: boolean) => void;
+  onValueChange: (loading: boolean) => void;
   children: ReactNode;
   bones?: BonesLayout[];
   skeletonContainerStyle?: ViewStyle;
   skeletonColors?: BoneColors;
   skeletonAnimation?: BoneAnimation;
 }> = ({
-  exampleIdentifier,
   loading,
   bones,
   skeletonContainerStyle,
@@ -38,10 +36,7 @@ export const SkeletonExample: FC<{
       >
         {children}
       </Skeleton>
-      <Switch
-        value={loading}
-        onValueChange={(value) => onValueChange(exampleIdentifier, value)}
-      />
+      <Switch value={loading} onValueChange={(value) => onValueChange(value)} />
     </View>
   );
 };

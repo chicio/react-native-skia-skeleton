@@ -1,123 +1,95 @@
 import { useState } from 'react';
-import { ScrollView, View } from 'react-native';
-import { Card, Title, Paragraph, Button } from 'react-native-paper';
-import { Skeleton } from 'react-native-skia-skeleton';
-import { CodeExample } from '../components/CodeExample';
+import { Container } from '../components/Container';
+import { Title } from '../components/Title';
+import { Paragraph } from '../components/Paragraph';
+import { RectangleExampleWithCode } from '../components/RectangleExampleWithCode';
 
-function ExampleCard({ title, description, children, active, onToggle }) {
-  return (
-    <Card mode="outlined" style={{ marginBottom: 16 }}>
-      <Card.Content>
-        <Title>{title}</Title>
-        <Paragraph style={{ marginBottom: 8 }}>{description}</Paragraph>
-        <Button
-          mode="contained"
-          onPress={onToggle}
-          style={{ marginBottom: 12 }}
-        >
-          {active ? 'Hide skeleton' : 'Show example'}
-        </Button>
-        {children}
-      </Card.Content>
-    </Card>
-  );
-}
+type ExamplesStatus = Record<string, boolean>;
 
 export default function ExamplesScreen() {
-  const [activeExample, setActiveExample] = useState<string | null>(null);
+  const [exampleStatus, setExampleStatus] = useState<ExamplesStatus>({});
 
-  const toggleExample = (key: string) => {
-    setActiveExample((prev) => (prev === key ? null : key));
+  const toggleExample = (key: string, value: boolean) => {
+    setExampleStatus((prev) => {
+      const resetStatus: ExamplesStatus = Object.keys(prev).reduce(
+        (acc, currKey) => {
+          acc[currKey] = false;
+          return acc;
+        },
+        {} as ExamplesStatus
+      );
+      return { ...resetStatus, [key]: value };
+    });
+  };
+
+  const isActive = (key: string) => {
+    return exampleStatus[key] ?? false;
   };
 
   return (
-    <ScrollView
-      contentContainerStyle={{
-        padding: 16,
-        maxWidth: 900,
-        alignSelf: 'center',
-      }}
-    >
-      <ExampleCard
-        title="Basic Card Skeleton"
-        description="A simple card skeleton layout simulating a content card."
-        active={activeExample === 'card'}
-        onToggle={() => toggleExample('card')}
-      >
-        <CodeExample language={'typescript'} code={'let a = 10'} />
-        {activeExample === 'card' ? (
-          <Skeleton
-            loading
-            width={300}
-            height={180}
-            radius={12}
-            style={{ alignSelf: 'center' }}
-          />
-        ) : (
-          <View
-            style={{
-              width: 300,
-              height: 180,
-              backgroundColor: '#ccc',
-              borderRadius: 12,
-              alignSelf: 'center',
-            }}
-          />
-        )}
-      </ExampleCard>
+    <Container>
+      <Title>Examples</Title>
+      <Paragraph>
+        Below you can find some examples that show the capabilities of the
+        library. There is an example for each one of the property that you can
+        customize and additionally some example with more complex content. Each
+        example comes with its corresponding code.
+      </Paragraph>
+      <RectangleExampleWithCode
+        title={'Base'}
+        description={
+          'Base example of the skeleton loader. It shows a simple rectangle without any customization to the skeleton' +
+          ' animations and colors.'
+        }
+        exampleIdentifier={'base'}
+        isActive={isActive}
+        toggleExample={toggleExample}
+        bones={[{ style: { width: 300, height: 100 } }]}
+        code={`
+import { Skeleton } from 'react-native-skia-skeleton';
 
-      <ExampleCard
-        title="Rounded Skeleton"
-        description="A circular skeleton to simulate avatar or profile image loading."
-        active={activeExample === 'circle'}
-        onToggle={() => toggleExample('circle')}
-      >
-        {activeExample === 'circle' ? (
-          <Skeleton
-            loading
-            width={100}
-            height={100}
-            radius={50}
-            style={{ alignSelf: 'center' }}
-          />
-        ) : (
-          <View
-            style={{
-              width: 100,
-              height: 100,
-              borderRadius: 50,
-              backgroundColor: '#ccc',
-              alignSelf: 'center',
-            }}
-          />
-        )}
-      </ExampleCard>
+export default function App() {
+  return (
+      <Skeleton
+        loading={true}
+        bones={[{ style: { width: 300, height: 100 } }]}
+      />
+  );
+}
 
-      <ExampleCard
-        title="RTL Shimmer"
-        description="An example using the right-to-left shimmer direction."
-        active={activeExample === 'rtl'}
-        onToggle={() => toggleExample('rtl')}
-      >
-        {activeExample === 'rtl' ? (
-          <Skeleton
-            loading
-            width={300}
-            height={100}
-            rtl
-            style={{ alignSelf: 'center' }}
-          />
-        ) : (
-          <View
-            style={{
-              width: 300,
-              height: 100,
-              backgroundColor: '#ccc',
-              alignSelf: 'center',
-            }}
-          />
-        )}
-      </ExampleCard>
-    </ScrollView>
+`}
+      />
+
+      <RectangleExampleWithCode
+        title={'Custom animation with RTL, timing and reverse'}
+        description={
+          'Base example of the skeleton loader. It shows a simple rectangle without any customization to the skeleton' +
+          ' animations and colors.'
+        }
+        exampleIdentifier={'customAnimation'}
+        isActive={isActive}
+        toggleExample={toggleExample}
+        bones={[{ style: { width: 300, height: 100 } }]}
+        skeletonAnimation={{
+          duration: 2500,
+          direction: 'rightToLeft',
+          reverse: true,
+        }}
+        code={`
+import { Skeleton } from 'react-native-skia-skeleton';
+
+export default function App() {
+  return (
+      <Skeleton
+        loading={loadingCard}
+        bones={[{ style: { width: 300, height: 100 } }]}
+        animation={{ duration: 2500, direction: 'rightToLeft', reverse: true }}
+      />
+  );
+}
+
+`}
+      />
+    </Container>
   );
 }

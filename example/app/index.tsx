@@ -33,9 +33,8 @@ export default function HomeScreen() {
         content in your mobile or web app.
       </Paragraph>
       <SkeletonExample
-        exampleIdentifier={'homeExample'}
         loading={loading}
-        onValueChange={(_, value) => setLoading(value)}
+        onValueChange={(value) => setLoading(value)}
         bones={[{ style: { width: 300, height: 100, borderRadius: 8 } }]}
       >
         <RectangleExample>
