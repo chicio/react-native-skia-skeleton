@@ -1,19 +1,12 @@
-import { ScrollView } from 'react-native';
-import { Text } from 'react-native-paper';
+import { Container } from '../components/Container';
+import { Title } from '../components/Title';
+import { Paragraph } from '../components/Paragraph';
 
 export default function LicenseScreen() {
   return (
-    <ScrollView
-      contentContainerStyle={{
-        padding: 16,
-        maxWidth: 900,
-        alignSelf: 'center',
-      }}
-    >
-      <Text variant="titleLarge" style={{ marginBottom: 16 }}>
-        MIT License
-      </Text>
-      <Text>
+    <Container>
+      <Title>MIT License</Title>
+      <Paragraph>
         Copyright (c) 2025 Fabrizio Duroni Permission is hereby granted, free of
         charge, to any person obtaining a copy of this software and associated
         documentation files (the "Software"), to deal in the Software without
@@ -30,7 +23,7 @@ export default function LicenseScreen() {
         AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         SOFTWARE.
-      </Text>
-    </ScrollView>
+      </Paragraph>
+    </Container>
   );
 }
