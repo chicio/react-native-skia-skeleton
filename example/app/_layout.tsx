@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { Platform, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
-import { ActivityIndicator, PaperProvider } from 'react-native-paper';
+import { ActivityIndicator, Button, PaperProvider } from 'react-native-paper';
 import { theme } from '../components/theme';
+import { FontAwesome } from '@expo/vector-icons';
+import { openURL } from 'expo-linking';
 
 const title = 'react-native-skia-skeleton';
 
@@ -31,7 +33,41 @@ export default function RootLayout() {
       <GestureHandlerRootView style={{ flex: 1 }}>
         <Drawer
           screenOptions={{
+            drawerStyle: {
+              // backgroundColor: '#1e1e2f', // sfondo del drawer
+            },
+            drawerActiveTintColor: '#ffffff', // colore testo item attivo
+            drawerInactiveTintColor: theme.colors.text, // colore testo item inattivo
+            drawerActiveBackgroundColor: theme.colors.primary, // sfondo item attivo
+            drawerLabelStyle: {
+              fontSize: 16,
+            },
+            headerStyle: {
+              backgroundColor: theme.colors.background,
+            },
+            headerTintColor: theme.colors.primary, // colore icone e testo
+            headerTitleStyle: {
+              color: theme.colors.primary, // colore titolo
+            },
             swipeEnabled: Platform.OS !== 'web',
+            headerRight: () => {
+              return Platform.OS === 'web' ? (
+                <Button
+                  icon={({ size, color }) => (
+                    <FontAwesome name="github" size={size} color={color} />
+                  )}
+                  style={{ margin: 8 }}
+                  onPress={() =>
+                    openURL(
+                      'https://github.com/chicio/react-native-skia-skeleton'
+                    )
+                  }
+                  mode="outlined"
+                >
+                  GitHub
+                </Button>
+              ) : null;
+            },
           }}
           detachInactiveScreens
         >
@@ -39,12 +75,10 @@ export default function RootLayout() {
             name="index"
             options={{ drawerLabel: 'Home', title }}
           />
-          {Platform.OS === 'web' && (
-            <Drawer.Screen
-              name="usage"
-              options={{ drawerLabel: 'Usage', title }}
-            />
-          )}
+          <Drawer.Screen
+            name="usage"
+            options={{ drawerLabel: 'Usage', title }}
+          />
           <Drawer.Screen
             name="examples"
             options={{ drawerLabel: 'Examples', title }}

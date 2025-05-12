@@ -139,7 +139,7 @@ export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
           </Text>
           <Text style={styles.text}>
             Also, huge thanks to the team for the feedback during our last
-            review.
+            review. It was really helpful!
           </Text>
         </View>
       </View>
@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
   },
   avatar: {
     width: 48,

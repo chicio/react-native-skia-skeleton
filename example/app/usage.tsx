@@ -75,7 +75,7 @@ export default function UsageScreen() {
       <Subtitle>Usage</Subtitle>
       <Paragraph>
         To start use this library you just need to import the Skeleton component
-        and setting the loading props to true, and declare at lieast one bone
+        and setting the loading props to true, and declare at least one bone
         with a specified with and height.
       </Paragraph>
       <CodeExample

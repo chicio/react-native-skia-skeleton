@@ -17,7 +17,10 @@ export default function HomeScreen() {
     <Container>
       <Title>react-native-skia-skeleton</Title>
       <Paragraph>
-        A{' '}
+        <Link href="https://www.npmjs.com/package/react-native-skia-skeleton/">
+          react-native-skia-skeleton
+        </Link>{' '}
+        is a{' '}
         <Text style={styles.italic}>
           performant, customizable and animated skeleton loader
         </Text>{' '}

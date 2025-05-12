@@ -26,7 +26,7 @@ export const SkeletonExample: FC<{
   const { colors } = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <View style={[styles.container, { backgroundColor: colors.backdrop }]}>
       <Skeleton
         loading={loading}
         containerStyle={skeletonContainerStyle}
