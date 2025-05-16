@@ -5,7 +5,7 @@ import { Paragraph } from '../components/Paragraph';
 import { borderRadius } from '../components/theme';
 import { Subtitle } from '../components/Subtitle';
 import { StyleSheet, View } from 'react-native';
-import { CodeExample } from '../components/CodeExample';
+import { CodeExample } from '../components/example/CodeExample';
 
 const props = [
   {
@@ -58,11 +58,17 @@ export default function UsageScreen() {
         yarn:
       </Paragraph>
       <CodeExample
-        code={`npm install react-native-skia-skeleton`}
+        code={`
+npm install react-native-skia-skeleton
+
+`}
         language="bash"
       />
       <CodeExample
-        code={`yarn add react-native-skia-skeleton`}
+        code={`
+yarn add react-native-skia-skeleton
+
+`}
         language="bash"
       />
       <Paragraph>

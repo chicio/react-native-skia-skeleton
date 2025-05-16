@@ -2,7 +2,11 @@ import { Skeleton } from 'react-native-skia-skeleton';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-export const CardFullLayoutSkeleton: React.FC<{ loading: boolean }> = ({
+interface CardFullLayoutSkeletonProps {
+  loading: boolean;
+}
+
+export const CardFullLayoutSkeleton: React.FC<CardFullLayoutSkeletonProps> = ({
   loading,
 }) => {
   return (

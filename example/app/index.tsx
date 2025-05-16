@@ -1,16 +1,15 @@
 import { FlatList, Image, StyleSheet } from 'react-native';
-import { Text, useTheme } from 'react-native-paper';
-import { SkeletonExample } from '../components/SkeletonExample';
+import { Text } from 'react-native-paper';
 import { Paragraph } from '../components/Paragraph';
 import { Title } from '../components/Title';
 import { Link } from '../components/Link';
 import { useState } from 'react';
-import { RectangleExample } from '../components/RectangleExample';
 import { Container } from '../components/Container';
 import { ListItem } from '../components/ListItem';
+import { CardFullLayoutSkeleton } from '../components/example/card/CardFullLayoutSkeleton';
+import { SkeletonCardExample } from '../components/example/card/SkeletonCardExample';
 
 export default function HomeScreen() {
-  const { fonts } = useTheme();
   const [loading, setLoading] = useState(false);
 
   return (
@@ -35,17 +34,12 @@ export default function HomeScreen() {
         . This library helps you show a beautiful placeholder while loading
         content in your mobile or web app.
       </Paragraph>
-      <SkeletonExample
-        loading={loading}
+      <SkeletonCardExample
+        isActive={loading}
         onValueChange={(value) => setLoading(value)}
-        bones={[{ style: { width: 300, height: 100, borderRadius: 8 } }]}
       >
-        <RectangleExample>
-          <Text style={{ color: 'white', ...fonts.titleMedium }}>
-            Try it out!
-          </Text>
-        </RectangleExample>
-      </SkeletonExample>
+        <CardFullLayoutSkeleton loading={loading} />
+      </SkeletonCardExample>
       <Paragraph>
         Designed to help you build visually engaging apps, it supports shimmer
         effects, RTL layout, customizable shapes and seamless animation

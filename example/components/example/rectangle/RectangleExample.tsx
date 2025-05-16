@@ -2,9 +2,11 @@ import { StyleSheet, View } from 'react-native';
 import { useTheme } from 'react-native-paper';
 import type { FC, ReactNode } from 'react';
 
-export const RectangleExample: FC<{ children?: ReactNode }> = ({
-  children,
-}) => {
+interface RectangleExampleProps {
+  children?: ReactNode;
+}
+
+export const RectangleExample: FC<RectangleExampleProps> = ({ children }) => {
   const { colors } = useTheme();
 
   return (

@@ -6,11 +6,15 @@ import { ActivityIndicator, Button, PaperProvider } from 'react-native-paper';
 import { theme } from '../components/theme';
 import { FontAwesome } from '@expo/vector-icons';
 import { openURL } from 'expo-linking';
+import { useMediaQuery } from 'react-responsive';
 
 const title = 'react-native-skia-skeleton';
 
 export default function RootLayout() {
   const [isSkiaReady, setIsSkiaReady] = useState(Platform.OS !== 'web');
+  const isTabletOrMobileDevice = useMediaQuery({
+    maxDeviceWidth: 768,
+  });
 
   useEffect(() => {
     if (Platform.OS === 'web') {
@@ -51,7 +55,7 @@ export default function RootLayout() {
             },
             swipeEnabled: Platform.OS !== 'web',
             headerRight: () => {
-              return Platform.OS === 'web' ? (
+              return Platform.OS === 'web' && !isTabletOrMobileDevice ? (
                 <Button
                   icon={({ size, color }) => (
                     <FontAwesome name="github" size={size} color={color} />

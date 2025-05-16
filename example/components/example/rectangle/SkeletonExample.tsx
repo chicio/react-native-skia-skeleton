@@ -1,10 +1,14 @@
 import { type FC, type ReactNode } from 'react';
-import { StyleSheet, Switch, View, type ViewStyle } from 'react-native';
-import { borderRadius, spacing } from './theme';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { borderRadius, spacing } from '../../theme';
 import { useTheme } from 'react-native-paper';
 import { Skeleton } from 'react-native-skia-skeleton';
-import type { BonesLayout } from '../../src/Bones/BonesFeatures';
-import type { BoneAnimation, BoneColors } from '../../src/Bone/BoneFeatures';
+import type { BonesLayout } from '../../../../src/Bones/BonesFeatures';
+import type {
+  BoneAnimation,
+  BoneColors,
+} from '../../../../src/Bone/BoneFeatures';
+import { ExampleSwitch } from '../ExampleSwitch';
 
 export const SkeletonExample: FC<{
   loading: boolean;
@@ -36,7 +40,7 @@ export const SkeletonExample: FC<{
       >
         {children}
       </Skeleton>
-      <Switch value={loading} onValueChange={(value) => onValueChange(value)} />
+      <ExampleSwitch isActive={loading} onValueChange={onValueChange} />
     </View>
   );
 };
