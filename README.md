@@ -18,8 +18,15 @@ Main features of the library include:
 
 ## Installation
 
+You can install the library using npm or yarn.
+Make sure you have the required dependencies installed in your project (React Native Reanimated and React Native Skia).
+
 ```sh
 npm install react-native-skia-skeleton
+```
+
+```sh
+yarn add react-native-skia-skeleton
 ```
 
 ## Usage
