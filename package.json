@@ -32,6 +32,7 @@
     "!**/.*"
   ],
   "scripts": {
+    "postinstall": "yarn workspace react-native-skia-skeleton-example setup-skia-for-web",
     "example": "yarn workspace react-native-skia-skeleton-example",
     "test": "jest",
     "typecheck": "tsc",

@@ -2,7 +2,7 @@
   "expo": {
     "scheme": "example",
     "name": "example",
-    "slug": "example",
+    "slug": "react-native-skia-skeleton",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,10 +25,21 @@
       "package": "skiaskeleton.example"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "output": "static",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "be4c3ce5-e0c1-4ba4-9a24-40dc5231e8ea"
+      }
+    },
+    "owner": "chicio"
   }
 }
