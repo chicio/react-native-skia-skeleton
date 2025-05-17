@@ -1,11 +1,12 @@
 import { Text } from 'react-native-paper';
-import { Container } from '../components/Container';
-import { Title } from '../components/Title';
-import { Paragraph } from '../components/Paragraph';
-import { borderRadius } from '../components/theme';
-import { Subtitle } from '../components/Subtitle';
+import { Container } from '../components/design-system/Container';
+import { Title } from '../components/design-system/Title';
+import { Paragraph } from '../components/design-system/Paragraph';
+import { borderRadius } from '../components/design-system/theme';
+import { Subtitle } from '../components/design-system/Subtitle';
 import { StyleSheet, View } from 'react-native';
 import { CodeExample } from '../components/example/CodeExample';
+import { useIsSmallDevice } from '../components/design-system/useMediaQuerySmallDevices';
 
 const props = [
   {
@@ -18,13 +19,18 @@ const props = [
     name: 'bones',
     type: 'BonesLayout[]',
     optional: true,
-    description: 'List of bones to render as placeholders.',
+    description:
+      'List of bones to render as placeholders. If this property is not passed, the Skeleton will try to render ' +
+      'bones based on the layout of the children. Be aware that this will work only if all the children have an ' +
+      'explicit width and height defined in the style property.',
   },
   {
     name: 'containerStyle',
     type: 'ViewStyle',
     optional: true,
-    description: 'Style applied to the container View',
+    description:
+      'Style applied to the container View. This style is applied to both the container of the bones and the ' +
+      'container of the real components (your components).',
   },
   {
     name: 'colors',
@@ -49,6 +55,8 @@ const props = [
 ];
 
 export default function UsageScreen() {
+  const isSmallDevice = useIsSmallDevice();
+
   return (
     <Container>
       <Title>Installation</Title>
@@ -108,30 +116,36 @@ export default function App() {
       </Paragraph>
       <View style={styles.table}>
         <View style={[styles.row, styles.header]}>
-          <Text style={[styles.cell, styles.headerText]}>Prop</Text>
-          <Text style={[styles.cell, styles.headerText]}>Type</Text>
-          <Text style={[styles.cell, styles.headerText]}>Optional</Text>
+          <Text style={[styles.cell, styles.headerText, { width: 130 }]}>
+            Prop
+          </Text>
+          {!isSmallDevice && (
+            <Text style={[styles.cell, styles.headerText]}>Type</Text>
+          )}
+          <Text style={[{ width: 70 }, styles.headerText]}>Optional</Text>
           <Text style={[styles.cell, styles.headerText, styles.description]}>
             Description
           </Text>
         </View>
         {props.map((prop) => (
           <View key={prop.name} style={styles.row}>
-            <Text style={styles.cell}>
+            <Text style={[styles.cell, { width: 130 }]}>
               <CodeExample
                 language={'typescript'}
                 code={prop.name}
                 inline={true}
               />
             </Text>
-            <Text style={styles.cell}>
-              <CodeExample
-                language={'typescript'}
-                code={prop.type}
-                inline={true}
-              />
-            </Text>
-            <Text style={styles.cell}>{prop.optional ? 'Yes' : 'No'}</Text>
+            {!isSmallDevice && (
+              <Text style={styles.cell}>
+                <CodeExample
+                  language={'typescript'}
+                  code={prop.type}
+                  inline={true}
+                />
+              </Text>
+            )}
+            <Text style={{ width: 70 }}>{prop.optional ? 'Yes' : 'No'}</Text>
             <Text style={[styles.cell, styles.description]}>
               {prop.description}
             </Text>
@@ -172,6 +186,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   description: {
-    flex: 2,
+    flex: 1,
   },
 });

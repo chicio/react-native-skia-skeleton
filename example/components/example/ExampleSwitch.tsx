@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { StyleSheet, Switch, View } from 'react-native';
-import { spacing } from '../theme';
-import { Text } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { spacing } from '../design-system/theme';
+import { Switch, Text } from 'react-native-paper';
 
 interface ExampleSwitchProps {
   isActive: boolean;

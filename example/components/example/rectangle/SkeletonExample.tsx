@@ -1,6 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 import { StyleSheet, View, type ViewStyle } from 'react-native';
-import { borderRadius, spacing } from '../../theme';
+import { borderRadius, spacing } from '../../design-system/theme';
 import { useTheme } from 'react-native-paper';
 import { Skeleton } from 'react-native-skia-skeleton';
 import type { BonesLayout } from '../../../../src/Bones/BonesFeatures';

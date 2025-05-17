@@ -3,18 +3,16 @@ import { Platform, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
 import { ActivityIndicator, Button, PaperProvider } from 'react-native-paper';
-import { theme } from '../components/theme';
+import { theme } from '../components/design-system/theme';
 import { FontAwesome } from '@expo/vector-icons';
 import { openURL } from 'expo-linking';
-import { useMediaQuery } from 'react-responsive';
+import { useIsSmallDevice } from '../components/design-system/useMediaQuerySmallDevices';
 
 const title = 'react-native-skia-skeleton';
 
 export default function RootLayout() {
   const [isSkiaReady, setIsSkiaReady] = useState(Platform.OS !== 'web');
-  const isTabletOrMobileDevice = useMediaQuery({
-    maxDeviceWidth: 768,
-  });
+  const isSmallDevice = useIsSmallDevice();
 
   useEffect(() => {
     if (Platform.OS === 'web') {
@@ -55,7 +53,7 @@ export default function RootLayout() {
             },
             swipeEnabled: Platform.OS !== 'web',
             headerRight: () => {
-              return Platform.OS === 'web' && !isTabletOrMobileDevice ? (
+              return Platform.OS === 'web' && !isSmallDevice ? (
                 <Button
                   icon={({ size, color }) => (
                     <FontAwesome name="github" size={size} color={color} />

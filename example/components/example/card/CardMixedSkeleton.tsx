@@ -1,21 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  useWindowDimensions,
-} from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { Skeleton } from 'react-native-skia-skeleton';
 
 export const CardMixedSkeleton: React.FC<{ loading: boolean }> = ({
   loading,
 }) => {
-  const { width } = useWindowDimensions();
-  const cardMargins = 20;
-
   return (
-    <View style={[styles.card, { width: width - cardMargins }]}>
+    <View style={[styles.card]}>
       <View style={styles.header}>
         <Skeleton
           loading={loading}
@@ -65,7 +56,7 @@ export const CardMixedSkeleton: React.FC<{ loading: boolean }> = ({
         bones={[
           {
             style: {
-              width: width - cardMargins - 32,
+              width: '100%',
               height: 16,
               borderRadius: 4,
             },
@@ -80,7 +71,7 @@ export const CardMixedSkeleton: React.FC<{ loading: boolean }> = ({
           },
           {
             style: {
-              width: width - cardMargins - 32,
+              width: '100%',
               height: 16,
               borderRadius: 4,
               marginTop: 10,

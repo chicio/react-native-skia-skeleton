@@ -13,8 +13,8 @@ import vs2015 from 'react-syntax-highlighter/dist/esm/styles/hljs/vs2015';
 import * as Clipboard from 'expo-clipboard';
 import { Icon } from 'react-native-paper';
 import type { FC } from 'react';
-import { borderRadius, spacing } from '../theme';
-import { useMediaQuery } from 'react-responsive';
+import { borderRadius, spacing } from '../design-system/theme';
+import { useIsSmallDevice } from '../design-system/useMediaQuerySmallDevices';
 
 interface CodeExampleProps {
   language: string;
@@ -29,9 +29,7 @@ export const CodeExample: FC<CodeExampleProps> = ({
   inline,
   onContentLayout,
 }) => {
-  const isTabletOrMobileDevice = useMediaQuery({
-    maxDeviceWidth: 768,
-  });
+  const isSmallDevice = useIsSmallDevice();
 
   if (Platform.OS !== 'web') {
     return <Text style={styles.appCode}>{code}</Text>;
@@ -51,7 +49,7 @@ export const CodeExample: FC<CodeExampleProps> = ({
       >
         {code}
       </SyntaxHighlighter>
-      {!inline && !isTabletOrMobileDevice && (
+      {!inline && !isSmallDevice && (
         <Pressable
           style={({ pressed }) => [
             styles.copyButton,

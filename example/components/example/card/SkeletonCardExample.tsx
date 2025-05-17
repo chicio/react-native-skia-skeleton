@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { borderRadius, spacing } from '../../theme';
+import { borderRadius, spacing } from '../../design-system/theme';
 import { CardExample } from './CardExample';
 import { useTheme } from 'react-native-paper';
 import { ExampleSwitch } from '../ExampleSwitch';

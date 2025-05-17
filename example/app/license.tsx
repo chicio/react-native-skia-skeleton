@@ -1,6 +1,6 @@
-import { Container } from '../components/Container';
-import { Title } from '../components/Title';
-import { Paragraph } from '../components/Paragraph';
+import { Container } from '../components/design-system/Container';
+import { Title } from '../components/design-system/Title';
+import { Paragraph } from '../components/design-system/Paragraph';
 
 export default function LicenseScreen() {
   return (

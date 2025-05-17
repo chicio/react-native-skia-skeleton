@@ -1,11 +1,11 @@
 import { FlatList, Image, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
-import { Paragraph } from '../components/Paragraph';
-import { Title } from '../components/Title';
-import { Link } from '../components/Link';
+import { Paragraph } from '../components/design-system/Paragraph';
+import { Title } from '../components/design-system/Title';
+import { Link } from '../components/design-system/Link';
 import { useState } from 'react';
-import { Container } from '../components/Container';
-import { ListItem } from '../components/ListItem';
+import { Container } from '../components/design-system/Container';
+import { ListItem } from '../components/design-system/ListItem';
 import { CardFullLayoutSkeleton } from '../components/example/card/CardFullLayoutSkeleton';
 import { SkeletonCardExample } from '../components/example/card/SkeletonCardExample';
 

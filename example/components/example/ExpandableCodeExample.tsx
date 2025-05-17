@@ -14,7 +14,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import typescript from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
-import { borderRadius, spacing } from '../theme';
+import { borderRadius, spacing } from '../design-system/theme';
 import { CodeExample } from './CodeExample';
 
 SyntaxHighlighter.registerLanguage('typescript', typescript);

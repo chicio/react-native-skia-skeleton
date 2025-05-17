@@ -1,8 +1,8 @@
 import { Linking, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { Container } from '../components/Container';
-import { Title } from '../components/Title';
-import { Paragraph } from '../components/Paragraph';
+import { Container } from '../components/design-system/Container';
+import { Title } from '../components/design-system/Title';
+import { Paragraph } from '../components/design-system/Paragraph';
 import { Button } from 'react-native-paper';
 
 export default function CreditsScreen() {

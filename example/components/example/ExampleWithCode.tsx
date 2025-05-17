@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
-import { Subtitle } from '../Subtitle';
-import { Paragraph } from '../Paragraph';
+import { Subtitle } from '../design-system/Subtitle';
+import { Paragraph } from '../design-system/Paragraph';
 import { ExpandableCodeExample } from './ExpandableCodeExample';
 import { Platform } from 'react-native';
 
