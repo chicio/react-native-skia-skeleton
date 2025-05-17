@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0 (2025-05-17)
+
+* feat(readme): added missing installation command :rocket: ([3e70d10](https://github.com/chicio/react-native-skia-skeleton/commit/3e70d10))
+* feat(readme): added properties description :rocket: ([2efb859](https://github.com/chicio/react-native-skia-skeleton/commit/2efb859))
+* feat(readme): readme with doc links and improved description + video :rocket: ([5e0ee90](https://github.com/chicio/react-native-skia-skeleton/commit/5e0ee90))
+* feat(test): added tests for useBonesFeatures hook :rocket: ([8b3ba55](https://github.com/chicio/react-native-skia-skeleton/commit/8b3ba55))
+
 ## 0.7.0 (2025-05-17)
 
 * feat(documentation): added drawer layout + manage status for components in misc page ([a15f3ae](https://github.com/chicio/react-native-skia-skeleton/commit/a15f3ae))
