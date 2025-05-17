@@ -19,9 +19,10 @@ export default function HomeScreen() {
         <Link href="https://www.npmjs.com/package/react-native-skia-skeleton/">
           react-native-skia-skeleton
         </Link>{' '}
-        is a{' '}
+        react-native-skia-skeleton is a
         <Text style={styles.italic}>
-          performant, customizable and animated skeleton loader
+          high-performance, fully customizable, and smoothly animated skeleton
+          loader
         </Text>{' '}
         built with{' '}
         <Link href="https://shopify.github.io/react-native-skia/">
@@ -31,8 +32,9 @@ export default function HomeScreen() {
         <Link href={'https://docs.swmansion.com/react-native-reanimated/'}>
           React Native Reanimated
         </Link>
-        . This library helps you show a beautiful placeholder while loading
-        content in your mobile or web app.
+        . It enables you to display elegant and visually appealing placeholders,
+        enhancing the user experience while your mobile or web app content
+        loads.
       </Paragraph>
       <SkeletonCardExample
         isActive={loading}

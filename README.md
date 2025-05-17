@@ -3,8 +3,18 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/chicio/react-native-skia-skeleton/ci.yml)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/chicio/react-native-skia-skeleton)
 
+react-native-skia-skeleton is a high-performance, fully customizable, and smoothly animated skeleton loader built with
+[React Native Skia](https://shopify.github.io/react-native-skia/) and [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/). It enables you to display elegant and visually appealing
+placeholders, enhancing the user experience while your mobile or web app content loads.
 
-A skia skeleton component for react native apps.
+Designed to help you build visually engaging apps, it supports shimmer effects, RTL layout, customizable shapes and
+seamless animation transitions.
+
+Main features of the library include:
+* High performances thanks to React Native Skia and React Native Reanimated
+* Full support for Android, iOS, and Web
+* RTL compatible and easily themeable
+* Zero dependencies outside of Skia and Reanimated
 
 ## Installation
 
@@ -14,7 +24,7 @@ npm install react-native-skia-skeleton
 
 ## Usage
 
-You can check the docs available at [https://react-native-skia-skeleton.expo.app/](https://react-native-skia-skeleton.expo.app/),
+You can check the doc available at [https://react-native-skia-skeleton.expo.app/](https://react-native-skia-skeleton.expo.app/),
 where you can find examples and a full description of how the component works.
 Here below is a simple example of how to use the component:
 
@@ -42,15 +52,10 @@ These are the properties exposed on the `Skeleton` component:
 | animation      | BoneAnimation    | Yes      | Animation type for the shimmer effect. It is an object with three properties: duration, direction and reverse.                                 |
 | children       | React.ReactNode  | Yes      | Content to render once loading is false                                                                                                        |
 
-Below you can find a video example of the component in action.
+Below, you can find a video example of the component in action.
 
 ![Video documentation](https://github.com/chicio/react-native-skia-skeleton/blob/main/assets/video-documentation.gif?raw=true)
 
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
-
