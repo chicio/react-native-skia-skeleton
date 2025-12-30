@@ -1,5 +1,14 @@
 # Changelog
 
+## <small>0.8.1 (2025-12-30)</small>
+
+* fix: downgrade @release-it/conventional-changelog to 10.0.1 ([29b3370](https://github.com/chicio/react-native-skia-skeleton/commit/29b3370))
+* chore(upgrade): fix release-it rules ([20e97e8](https://github.com/chicio/react-native-skia-skeleton/commit/20e97e8))
+* chore(upgrade): upgrade example dependecies ([ab51fcb](https://github.com/chicio/react-native-skia-skeleton/commit/ab51fcb))
+* chore(upgrade): upgrade main dependencies ([cd6a484](https://github.com/chicio/react-native-skia-skeleton/commit/cd6a484))
+* chore(upgrade): upgrade main dependencies ([3da6ebe](https://github.com/chicio/react-native-skia-skeleton/commit/3da6ebe))
+* chore(upgrade): upgrade main dependencies + fix tests ([b7f6c55](https://github.com/chicio/react-native-skia-skeleton/commit/b7f6c55))
+
 ## 0.8.0 (2025-05-17)
 
 * feat(readme): added missing installation command :rocket: ([3e70d10](https://github.com/chicio/react-native-skia-skeleton/commit/3e70d10))
