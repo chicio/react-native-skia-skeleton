@@ -1,3 +1,5 @@
+
+
 # react-native-skia-skeleton
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/chicio/react-native-skia-skeleton/ci.yml)
@@ -20,6 +22,7 @@ Main features of the library include:
 
 You can install the library using npm or yarn.
 Make sure you have the required dependencies installed in your project (React Native Reanimated and React Native Skia).
+If your app targets web, make sure you load Skia with `LoadSkiaWeb` before your app renders.
 
 ```sh
 npm install react-native-skia-skeleton
